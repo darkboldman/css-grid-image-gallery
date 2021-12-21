@@ -1,0 +1,141 @@
+/* import goole font - Raleway 300 & 700 */
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+
+/* Font & colour variables */
+/* Fonts */
+/* $sans-serif: 'Raleway', sans-serif;
+$font-light: 300;
+$font-bold: 700; */
+
+/* Colours */
+/* $black : #353535; */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #545454;
+    color: aliceblue;
+    font-family: 'Raleway';
+    font-size: 1.2rem;
+    line-height: 1.45;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.sidebar {
+    background: #707070;
+    flex: 1 1 20%;
+    min-width: 300px;
+    padding: 3em;
+}
+
+.logo {
+    text-transform: uppercase;
+    margin-bottom: 2em;
+
+    @media (min-width: 1500px) {
+        margin-bottom: 5em;
+
+    }
+     
+}
+
+.nav-item {
+    color: rgb(190, 245, 190);
+    text-decoration: none;
+    font-size: 1.7rem;
+    display: inline-block;
+    margin-right: 2rem;
+    @media (min-width: 1500px) {
+        display: block;
+        margin: 7vh 0;
+    }        
+}
+
+.nav-item.active {
+    color: chocolate;
+}
+
+.main-content {
+    padding: 10%;
+    flex: 1 1 80%;
+    min-height: 100vh;
+}
+
+.portfolio {
+    display: grid;
+    height: 100%;
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.portfolio-item {
+    background: palevioletred;
+    color: aliceblue;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    background-size: cover;
+    background-position: top left;
+    transition: all ease-in-out 300ms;
+    position: relative;
+    z-index: 10;
+
+    &.small {
+        grid-row: span 1;
+        grid-column: span 1;
+    }
+
+    &.medium {
+        grid-row: span 2;
+        grid-column: span 2;
+    }
+
+    &.large {
+        grid-row: span 3;
+        grid-column: span 3;
+    }
+
+    &.tall {
+        grid-row: span 3;
+        grid-column: span 2;
+    }
+
+    &.wide {
+        grid-row: span 2;
+        grid-column: span 3;
+    }
+
+    &:hover {
+        color: white;
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.85);
+    }  
+}
+
+.two {
+    background-image: url(//unsplash.it/800/600);
+
+    &::before {
+        content: '';
+        display: block;
+        background: black;
+        opacity: 0.8;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transition: all ease-in-out 300ms;
+        z-index: -1;
+    }
+
+    &:hover::before {
+        opacity: 0.2;
+    }
+}
+
